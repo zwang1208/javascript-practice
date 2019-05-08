@@ -17,7 +17,7 @@ class EventEmitter {
             index = callbackArr.reduce((i, item, index) => {
                 return (isFunction(item) && item === callback)?
                 i = index:i
-            })
+            }, -1)
             if(index > -1) {
                 callbackArr.splice(index, 1);
                 this.listeners.set(lable, callbackArr)
